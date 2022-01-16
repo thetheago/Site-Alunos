@@ -183,7 +183,7 @@
                                         $pagina = @intval($_GET['pagina']);
                                         
 
-                                        if(isset($_POST['filtrar'])){
+                                        if(isset($_POST['filtrar']) && !empty($_POST['id_digitado'])){
                                             $id_digitado = $_POST['id_digitado'];
                                             $busca_alunos = "SELECT * FROM alunos WHERE id = $id_digitado AND ativo = 's'";
                                            
