@@ -27,7 +27,7 @@
           $curso = $_POST['curso'];
           $turma = $_POST['turma'];
 
-          if(!empty($codAluno) && !empty($nome) && !empty($login) && !empty($senha) 
+          if(!empty($nome) && !empty($login) && !empty($senhaCadastro) 
             && !empty($cep) && !empty($email) && !empty($numero) && !empty($dataCadastro) 
             && !empty($curso) && !empty($turma))
           {
@@ -67,6 +67,17 @@
             
           }else{
 
+            echo"nome : $nome <br>";
+            echo"codAluno : $codAluno <br>";
+            echo"login : $login <br>";
+            echo"senhaCadastro : $senhaCadastro <br>";
+            echo"email : $email <br>";
+            echo"cep : $cep <br>";
+            echo"numero : $numero <br>";
+            echo"complemento : $complemento <br>";
+            echo"curso : $curso <br>";
+            echo"turma : $turma <br>";
+            echo"dataCadastro : $dataCadastro <br>";
 
             ?>
               <h1 style='color: white;'>Certifique-se de preencher todos os campos</h1>
