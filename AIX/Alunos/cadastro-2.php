@@ -18,7 +18,7 @@
           $codAluno = substr(uniqid(rand()), 0, 5);
           $nome = $_POST['nome'];
           $login = $_POST['login'];
-          $senha = $_POST['senha'];
+          $senhaCadastro = $_POST['senha'];
           $cep = $_POST['cep'];
           $email = $_POST['email'];
           $numero = $_POST['numero'];
@@ -39,12 +39,10 @@
                 $estado = $api->estado;
 
 
-            
-
             require_once "../lib/connectdb.php";
 
             $query = "INSERT INTO `alunos`(`nome`, cod_aluno, `login`, `senha`, `email`, ativo, cep, cidade, estado, bairro, rua, numero, complemento, curso, turma, data_cadastro) 
-              VALUES ('$nome', '$codAluno', '$login','$senha','$email','s','$cep', '$cidade', '$estado', '$bairro','$rua', '$numero', '$complemento', '$curso', '$turma', '$dataCadastro')";
+              VALUES ('$nome', '$codAluno', '$login','$senhaCadastro','$email','s','$cep', '$cidade', '$estado', '$bairro','$rua', '$numero', '$complemento', '$curso', '$turma', '$dataCadastro')";
             
             if($insert = $link->query($query)){
 
