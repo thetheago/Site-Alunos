@@ -57,9 +57,8 @@
         //$_FILES['xml-input']['tmp_name']
 
             require_once "../../lib/connectdb.php";
-            session_start();
 
-            if(isset($_POST['enviar-xml']) && isset($_SESSION['xml'])) {
+            if(isset($_POST['enviar-xml'])) {
                 $xml = simplexml_load_file($_FILES['xml-input']['tmp_name']);
 
                 $i = 0;
@@ -80,7 +79,7 @@
                     $insert = "INSERT INTO `cursos`( `cod_curso`, `nome_curso`) VALUES ('$cod','$nome')";
                     if($execute = $link->query($insert)){
 
-                        print"<h1 style='color: #39f739'>Curso $nome</h1>";
+                        print"<h1 style='color: white'>Curso $nome</h1>";
                     }else{
                         print"<h1 style='color: white'>Erro ao adicionar $nome banco</h1>";
                     }
@@ -88,7 +87,7 @@
                     
                 }
 
-                print"<h1 style='color: green'>Adicionados ao banco</h1>";
+                print"<h1 style='color: #39f739'>Adicionados ao banco</h1>";
 
                 
                 
