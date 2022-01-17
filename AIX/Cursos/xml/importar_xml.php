@@ -57,8 +57,9 @@
         //$_FILES['xml-input']['tmp_name']
 
             require_once "../../lib/connectdb.php";
+            session_start();
 
-            if(isset($_POST['enviar-xml'])) {
+            if(isset($_POST['enviar-xml']) && isset($_SESSION['xml'])) {
                 $xml = simplexml_load_file($_FILES['xml-input']['tmp_name']);
 
                 $i = 0;
